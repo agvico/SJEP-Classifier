@@ -23,8 +23,9 @@ public class CPTree {
        ArrayList<Item> p = new ArrayList<>(pattern);
         addInstance(p, root, clas);
     }
-    
-    private void addInstance(ArrayList<Item> pattern, CPTreeNode node, int clas){
+   
+   
+   private void addInstance(ArrayList<Item> pattern, CPTreeNode node, int clas){
         
         // End of the recursivity
         if(pattern.size() <= 0) return;
@@ -68,4 +69,54 @@ public class CPTree {
             addInstance(pattern, p.child, clas);
         }
     }
+   
+   
+   /**
+    * Merges T1's nodes into T2. T2 is updated(including new-node generation and
+    *    existing-node changes, but no nodes
+    *    deletion), while T1 remains unchanged.
+    * The merge must be done T1 is the subtree and T2 is T1's parent. Else, the 
+    * function would cause an stack overflow.
+    * @param T1
+    * @param T2 
+    */
+   public void mergeTree(CPTreeNode T1, CPTreeNode T2){
+       // For each item in T1
+       for(Item item : T1.items){
+           // Search 'item' in T2
+           int value = T2.items.indexOf(item);
+           
+           if(value != -1){
+               // If 'item' is found in T2:
+               int sumD1 = T2.items.get(value).getD1count() + item.getD1count();
+               int sumD2 = T2.items.get(value).getD2count() + item.getD2count();
+               // Update values of D1 and D2
+               T2.items.get(value).setD1count(sumD1);
+               T2.items.get(value).setD2count(sumD2);
+           } else{
+               // if 'item' is not found in T2:
+               // insert the whole 'item' (including subtree) following the order
+               T2.items.add(item);
+               T2.items.sort(null);
+               // increments itemNumber
+               T2.itemNumber++;
+           }
+           
+           // if 'item' subtree is not empty:
+           if(item.child != null){
+               // if T2.items[value] subtree is empty:
+               value = T2.items.indexOf(item);
+               if(T2.items.get(value).child == null){
+                   // create a new node as subtree
+                   T2.items.get(value).child = new CPTreeNode(0);
+               } else {
+                   // else, perform the recursive call on T2.items[value] subtree
+                   mergeTree(item.child, T2.items.get(value).child);
+               }
+           }
+           
+       }
+   }
+    
+    
 }

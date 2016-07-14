@@ -30,6 +30,22 @@ public class Item implements Comparable<Item>{
         D2count = 0;
     }
     
+   
+
+    @Override
+    public boolean equals(Object other) {
+          if (other == null) return false;
+          if (other == this) return true;
+          if (!(other instanceof Item))return false;
+          
+          Item obj = (Item) other;
+          boolean c1 = this.D1count == obj.D1count;
+          boolean c2 = this.D2count == obj.D2count;
+          boolean c3 = this.growthRate == obj.growthRate;
+          boolean c4 = this.itemID == obj.itemID;
+          
+          return c1 && c2 && c3 && c4;
+    }
     
     @Override
     public int compareTo(Item o) {
