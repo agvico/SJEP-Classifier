@@ -11,10 +11,10 @@ package sjep_classifier;
  */
 public class Item implements Comparable<Item>{
     
-    private int itemID;              // The ID of the item
-    private String value;            // the value of the variable
-    private String variable;         // The name of the variable to represent
-    private double growthRate;       // The growthRate of the item
+    private final int itemID;              // The ID of the item
+    private final String value;            // the value of the variable
+    private final String variable;         // The name of the variable to represent
+    private final double growthRate;       // The growthRate of the item
     
     private int D1count;             // Counts of the actual item in the node  for class 1
     private int D2count;             // Counts of the actual item in the node  for class 2
@@ -42,9 +42,10 @@ public class Item implements Comparable<Item>{
           boolean c1 = this.D1count == obj.D1count;
           boolean c2 = this.D2count == obj.D2count;
           boolean c3 = this.growthRate == obj.growthRate;
-          boolean c4 = this.itemID == obj.itemID;
-          
-          return c1 && c2 && c3 && c4;
+          boolean c4 = this.getItemID() == obj.getItemID();
+          boolean c5 = this.value.equals(obj.value);
+          boolean c6 = this.variable.equals(obj.variable);          
+          return c1 && c2 && c3 && c4 && c5 && c6;
     }
     
     @Override
@@ -62,7 +63,7 @@ public class Item implements Comparable<Item>{
     
     @Override
     public String toString(){
-        return variable + ": " + value;
+        return getVariable() + " = " + getValue();
     }
     
     public void incrementsD1(){
@@ -99,6 +100,27 @@ public class Item implements Comparable<Item>{
      */
     public void setD2count(int D2count) {
         this.D2count = D2count;
+    }
+
+    /**
+     * @return the itemID
+     */
+    public int getItemID() {
+        return itemID;
+    }
+
+    /**
+     * @return the value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * @return the variable
+     */
+    public String getVariable() {
+        return variable;
     }
     
 }
