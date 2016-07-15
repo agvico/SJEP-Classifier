@@ -5,6 +5,8 @@
  */
 package sjep_classifier;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author angel
@@ -20,6 +22,22 @@ public class Item implements Comparable<Item>{
     private int D2count;             // Counts of the actual item in the node  for class 2
     
     public CPTreeNode child;         // the child of the node
+    
+    
+    public Item(Item other){
+        this.D1count = other.D1count;
+        this.D2count = other.D2count;
+        this.value = other.value;
+        this.variable = other.variable;
+        this.growthRate = other.growthRate;
+        this.itemID = other.itemID;
+        if(this.child == null){
+            this.child = null;
+        } else {
+            this.child = new CPTreeNode(other.child);
+        }
+    }
+    
     
     public Item(int id, String value, String variable, double gr){
         itemID = id;
@@ -39,13 +57,12 @@ public class Item implements Comparable<Item>{
           if (!(other instanceof Item))return false;
           
           Item obj = (Item) other;
-          boolean c1 = this.D1count == obj.D1count;
-          boolean c2 = this.D2count == obj.D2count;
-          boolean c3 = this.growthRate == obj.growthRate;
-          boolean c4 = this.getItemID() == obj.getItemID();
+         
+          //boolean c3 = this.growthRate == obj.growthRate;
+          //boolean c4 = this.getItemID() == obj.getItemID();
           boolean c5 = this.value.equals(obj.value);
           boolean c6 = this.variable.equals(obj.variable);          
-          return c1 && c2 && c3 && c4 && c5 && c6;
+          return /*c3 && c4 &&*/ c5 && c6;
     }
     
     @Override
@@ -121,6 +138,23 @@ public class Item implements Comparable<Item>{
      */
     public String getVariable() {
         return variable;
+    }
+    
+    
+    /**
+     * Finds an item into an ArrayList of items by variable - value pairs
+     * @param items
+     * @param variable
+     * @param value
+     * @return 
+     */
+    public static Item find(ArrayList<Item> items, String variable, String value){
+        for(int i = 0; i < items.size(); i++){
+            if(items.get(i).value.equals(value) && items.get(i).variable.equals(variable)){
+                return items.get(i);
+            }
+        }
+        return null;
     }
     
 }

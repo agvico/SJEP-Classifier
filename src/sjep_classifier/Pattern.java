@@ -6,6 +6,7 @@
 package sjep_classifier;
 
 import java.util.ArrayList;
+import keel.Dataset.Attributes;
 
 /**
  *
@@ -76,6 +77,6 @@ public class Pattern {
         }
         
         result += items.get(items.size()-1).toString();
-        return result + " THEN " + clase;
+        return result + " THEN " + Attributes.getOutputAttribute(0).getNominalValue(clase);
     }
 }

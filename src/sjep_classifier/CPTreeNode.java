@@ -21,5 +21,10 @@ public class CPTreeNode {
      itemNumber = iNumber;
      items = new ArrayList<>();
  }
+
+    CPTreeNode(CPTreeNode other) {
+        this.itemNumber = other.itemNumber;
+        this.items = new ArrayList<>(other.items);
+    }
     
 }

@@ -19,10 +19,10 @@ public class CPTree {
     private int D1;              // The number of instances belonging to class D1
     private int D2;              // The number of instances belonging to class D2
 
-    public CPTree() {
+    public CPTree(int D1, int D2) {
         root = new CPTreeNode(0);
-        D1 = 0;
-        D2 = 0;
+        this.D1 = D1;
+        this.D2 = D2;
     }
 
     /**
@@ -52,7 +52,7 @@ public class CPTree {
 
         // Search for the first item in the item list of the actual node.
         int value = node.items.indexOf(pattern.get(0));
-        Item p = pattern.get(0);
+        Item p = new Item(pattern.get(0));
         if (value == -1) {
             // If item does not exist in the node:
             // D1 and D2 counts are 0
@@ -75,17 +75,17 @@ public class CPTree {
             node.items.get(node.items.indexOf(p)).incrementsD2();
         }
 
-        // Now, if patter is not empty
+        // Now, if pattern is not empty
         if (pattern.size() > 0) {
             // if item subtree is empty
-            if (p.child == null) {
+            if (p.child == null || p.child.items.size() == 0) {
                 // create a new child node as subtree
                 p.child = new CPTreeNode(0);
             }
 
             // recursive call with the next element of the pattern
             pattern.remove(0);
-            addInstance(pattern, p.child, clas);
+            addInstance(pattern, node.items.get(node.items.indexOf(p)).child, clas);
         }
     }
 
@@ -98,7 +98,7 @@ public class CPTree {
      * @param T1
      * @param T2
      */
-    public void mergeTree(CPTreeNode T1, CPTreeNode T2) {
+    private void mergeTree(CPTreeNode T1, CPTreeNode T2) {
         // For each item in T1
         for (Item item : T1.items) {
             // Search 'item' in T2
@@ -121,16 +121,15 @@ public class CPTree {
             }
 
             // if 'item' subtree is not empty:
-            if (item.child != null) {
+            if (item.child != null && item.child.items.size() > 0) {
                 // if T2.items[value] subtree is empty:
                 value = T2.items.indexOf(item);
-                if (T2.items.get(value).child == null) {
+                if (T2.items.get(value).child == null || T2.items.get(value).child.items.size() == 0) {
                     // create a new node as subtree
                     T2.items.get(value).child = new CPTreeNode(0);
-                } else {
-                    // else, perform the recursive call on T2.items[value] subtree
-                    mergeTree(item.child, T2.items.get(value).child);
-                }
+                } 
+                // make the recursive call 
+                mergeTree(item.child, T2.items.get(value).child);
             }
 
         }
@@ -170,24 +169,26 @@ public class CPTree {
             //make a copy of 'pattern' to avoid pass by reference:
             ArrayList<Item> p = new ArrayList<>(pattern);
             // If 'item' subtree is not empty
-            if (item.child != null) {
+            if (item.child != null && item.child.items.size() > 0) {
                 // merge the subtree with his parent
+                
                 mergeTree(item.child, node);
             }
 
             // Add 'item' to the resulting 'p'
-            p.add(item);
-
+            p.add(new Item(item));
+            int threshold_D1 = (int) (D1 * minSupp);
+            int threshold_D2 = (int) (D2 * minSupp);
             // Generate a SJEP of D2 if the patternes match the conditions
-            if (item.getD1count() == 0 && item.getD2count() >= (int) (D2 * minSupp)) {
+            if (item.getD1count() == 0 && item.getD2count() >= threshold_D2) {
                 // Generate the SJEP
                 result.add(new Pattern(p, item.getD2count(), 1));
 
-            } else if (item.getD2count() == 0 && item.getD1count() >= (int) (D1 * minSupp)) {
+            } else if (item.getD2count() == 0 && item.getD1count() >= threshold_D1) {
                 // Generate the SJEP for class D1
                 result.add(new Pattern(p, item.getD1count(), 0));
 
-            } else if (item.child != null && (item.getD1count() >= (int) (D1 * minSupp) || item.getD2count() >= (int) (D2 * minSupp))) {
+            } else if ((item.child != null && item.child.items.size() > 0) && (item.getD1count() >= (int) (D1 * minSupp) || item.getD2count() >= (int) (D2 * minSupp))) {
                // If subtree of 'item' is not null and the node pass the support threshold
                 // then, go deeper searching for longer SJEPs
 
