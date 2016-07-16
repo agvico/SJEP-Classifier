@@ -5,6 +5,10 @@
  */
 package sjep_classifier;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,7 +34,7 @@ public class SJEP_Classifier {
         InstanceSet a = new InstanceSet();
         int countD1 = 0;
         int countD2 = 0;
-        final double minSupp = 0.1;
+        final double minSupp = 0.01;
 
         // Reads the original dataset
         try {
@@ -44,6 +48,7 @@ public class SJEP_Classifier {
                     countD2++;
                 }
             }
+
         } catch (DatasetException | HeaderFormatException ex) {
             Logger.getLogger(SJEP_Classifier.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -51,11 +56,11 @@ public class SJEP_Classifier {
         if (Attributes.getOutputAttribute(0).getNumNominalValues() <= 2) {
             // Normal Execution
             long t_ini = System.currentTimeMillis();
-            // get simple itemsets to perform the ordering of the items
+            // get simple itemsets to perform the ordering of the items and filter by gorwth rate
             ArrayList<Item> simpleItems = getSimpleItems(a, minSupp);
             // sort items by growth rate 
             simpleItems.sort(null);
-            // gets all instances
+            // gets all instances removing those instances
             ArrayList<Pair<ArrayList<Item>, Integer>> instances = getInstances(a, simpleItems);
             for (int i = 0; i < instances.size(); i++) {
                 // sort each arraylist of items
@@ -77,25 +82,66 @@ public class SJEP_Classifier {
             if (patterns.size() == 0) {
                 System.out.println("NO SJEPs FOUND");
             } else {
-                System.out.println("SJEPs found: " + patterns.size());
-
-                // Rules TESTING here
-                // First, reads the test set
-                InstanceSet test = new InstanceSet();
-                ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
-                int[] predictions;
                 try {
+                    PrintWriter pw = new PrintWriter(args[0] + "-Patterns.csv");
+                    for (int i = 0; i < patterns.size(); i++) {
+                        pw.println(patterns.get(i).toString());
+                    }
+                    System.out.println("Testing patterns...");
+                // pattern TESTING here
+                    // First, reads the test set
+                    InstanceSet test = new InstanceSet();
+                    ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
+
                     test.readSet(args[1], false);
                     // Get the instances: It is not neccesary to sort that instances.
                     testInstances = getInstances(test, simpleItems);
-                    
-                    
+                    // Writes the confusion matrix file in CSV format
+                    pw = new PrintWriter(args[0] + "-CM.csv", "UTF-8");
+                    pw.println("TP,FP,FN,TN"); // Prints the header
+
+                    // Calculate the confusion matrix for each pattern to compute other quality measures
+                    for (int i = 0; i < patterns.size(); i++) {
+                        int tp = 0;
+                        int tn = 0;
+                        int fp = 0;
+                        int fn = 0;
+                        // for each instance
+                        for (int j = 0; j < testInstances.size(); j++) {
+                            // class '0' is considered the positive class
+                            // If the pattern covers the example
+                            if (patterns.get(i).covers(testInstances.get(j).getKey())) {
+                                if (test.getOutputNumericValue(j, 0) == 0) {
+                                    if (patterns.get(i).getClase() == 0) {
+                                        tp++;
+                                    } else {
+                                        fn++;
+                                    }
+                                } else {
+                                    if (patterns.get(i).getClase() == 1) {
+                                        tn++;
+                                    } else {
+                                        fp++;
+                                    }
+                                }
+                            }
+                        }
+                        // Saves on the file
+                        pw.println(tp + "," + fp + "," + fn + "," + tn);
+                    }
+                    // close the writer
+                    pw.close();
+
+                    // Show statistics
+                    System.out.println("================ STATISTICS =====================");
+                    System.out.println("SJEPs found: " + patterns.size());
                     // Calculate the test accuracy:
                     computeAccuracy(testInstances, patterns, test, countD1, countD2);
                 } catch (DatasetException | HeaderFormatException ex) {
                     Logger.getLogger(SJEP_Classifier.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(SJEP_Classifier.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
 
             }
             System.out.println("Execution time: " + (System.currentTimeMillis() - t_ini) / 1000 + " seconds");
@@ -207,98 +253,96 @@ public class SJEP_Classifier {
                 return (values.get(middle - 1) + values.get(middle)) / 2.0;
             }
         } else {
-            if(values.size() == 1){
+            if (values.size() == 1) {
                 return values.get(0);
             }
             return 0;
         }
     }
-    
-    
-    
-    public static void calculateAccuracy(InstanceSet testSet, int[] predictions){
+
+    public static void calculateAccuracy(InstanceSet testSet, int[] predictions) {
         // we consider class 0 as positive and class 1 as negative
         int tp = 0;
         int fp = 0;
         int tn = 0;
         int fn = 0;
-        
+
         // Calculate the confusion matrix.
-        for(int i = 0; i < predictions.length; i++){
-            if(testSet.getOutputNumericValue(i, 0) == 0){
-                if(predictions[i] == 0){
+        for (int i = 0; i < predictions.length; i++) {
+            if (testSet.getOutputNumericValue(i, 0) == 0) {
+                if (predictions[i] == 0) {
                     tp++;
                 } else {
                     fn++;
                 }
             } else {
-                 if(predictions[i] == 0){
+                if (predictions[i] == 0) {
                     fp++;
                 } else {
                     tn++;
                 }
             }
         }
-        
-        System.out.println("Test Accuracy: " + ((tp + tn) / (tp+tn+fp+fn)) * 100 + "%");
+
+        System.out.println("Test Accuracy: " + ((double) (tp + tn) / (double) (tp + tn + fp + fn)) * 100 + "%");
     }
-    
-    
-    
-    public static void computeAccuracy(ArrayList<Pair<ArrayList<Item>, Integer>> testInstances, ArrayList<Pattern> patterns, InstanceSet test, int countD1, int countD2){
-                    int[] predictions = new int[testInstances.size()];
-                    //Now, for each pattern
-                    for (int i = 0; i < testInstances.size(); i++) {
-                        // calculate the score for each class for classify:
-                        double scoreD1 = 0;
-                        double scoreD2 = 0;
-                        ArrayList<Integer> scoresD1 = new ArrayList<>();  // This is to calculate the base-score, that is the median
-                        ArrayList<Integer> scoresD2 = new ArrayList<>();
-                        // for each pattern mined
-                        for (int j = 0; j < patterns.size(); j++) {
-                            if (patterns.get(j).covers(testInstances.get(i).getKey())) {
-                                // If the example is covered by the pattern.
-                                // sum it support to the class of the pattern
-                                if (testInstances.get(i).getValue() == 0) {
-                                    scoreD1 += patterns.get(j).getSupport();
-                                    scoresD1.add(patterns.get(j).getSupport());
-                                } else {
-                                    scoreD2 += patterns.get(j).getSupport();
-                                    scoresD2.add(patterns.get(j).getSupport());
-                                }
 
-                            }
-                        }
-
-                        // Now calculate the normalized score to make the prediction
-                        double medianD1 = median(scoresD1);
-                        double medianD2 = median(scoresD2);
-                        
-                        if(medianD1 == 0)
-                            scoreD1 = 0;
-                        else
-                            scoreD1 = scoreD1 / medianD1;
-                        
-                        if(medianD2 == 0)
-                            scoreD2 = 0;
-                        else
-                            scoreD2 = scoreD2 / medianD2;
-
-                        // make the prediction:
-                        if (scoreD1 > scoreD2) {
-                            predictions[i] = 0;
-                        } else if (scoreD1 < scoreD2) {
-                            predictions[i] = 1;
-                        } else {
-                            // In case of ties, the majority class is setted
-                            if (countD1 < countD2) {
-                                predictions[i] = 0;
-                            } else {
-                                predictions[i] = 1;
-                            }
-                        }
+    public static void computeAccuracy(ArrayList<Pair<ArrayList<Item>, Integer>> testInstances, ArrayList<Pattern> patterns, InstanceSet test, int countD1, int countD2) {
+        int[] predictions = new int[testInstances.size()];
+        //Now, for each pattern
+        for (int i = 0; i < testInstances.size(); i++) {
+            // calculate the score for each class for classify:
+            double scoreD1 = 0;
+            double scoreD2 = 0;
+            ArrayList<Integer> scoresD1 = new ArrayList<>();  // This is to calculate the base-score, that is the median
+            ArrayList<Integer> scoresD2 = new ArrayList<>();
+            // for each pattern mined
+            for (int j = 0; j < patterns.size(); j++) {
+                if (patterns.get(j).covers(testInstances.get(i).getKey())) {
+                    // If the example is covered by the pattern.
+                    // sum it support to the class of the pattern
+                    if (testInstances.get(i).getValue() == 0) {
+                        scoreD1 += patterns.get(j).getSupport();
+                        scoresD1.add(patterns.get(j).getSupport());
+                    } else {
+                        scoreD2 += patterns.get(j).getSupport();
+                        scoresD2.add(patterns.get(j).getSupport());
                     }
 
-                    calculateAccuracy(test, predictions);
+                }
+            }
+
+            // Now calculate the normalized score to make the prediction
+            double medianD1 = median(scoresD1);
+            double medianD2 = median(scoresD2);
+
+            if (medianD1 == 0) {
+                scoreD1 = 0;
+            } else {
+                scoreD1 = scoreD1 / medianD1;
+            }
+
+            if (medianD2 == 0) {
+                scoreD2 = 0;
+            } else {
+                scoreD2 = scoreD2 / medianD2;
+            }
+
+            // make the prediction:
+            if (scoreD1 > scoreD2) {
+                predictions[i] = 0;
+            } else if (scoreD1 < scoreD2) {
+                predictions[i] = 1;
+            } else {
+                // In case of ties, the majority class is setted
+                if (countD1 < countD2) {
+                    predictions[i] = 0;
+                } else {
+                    predictions[i] = 1;
+                }
+            }
+        }
+
+        calculateAccuracy(test, predictions);
     }
 }
