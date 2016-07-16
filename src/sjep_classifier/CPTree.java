@@ -195,6 +195,9 @@ public class CPTree {
                 // recursive call
                 mine_tree(item.child, p, minSupp, result);
             }
+            
+            // remove the item subtree to allow large datasets load
+            item.child = null;
 
         }
 
