@@ -54,14 +54,15 @@ public class SJEP_Classifier {
         }
 
         if (Attributes.getOutputAttribute(0).getNumNominalValues() <= 2) {
-            // Normal Execution
+            // Normal Execution (BINARY PROBLEM)
             long t_ini = System.currentTimeMillis();
             // get simple itemsets to perform the ordering of the items and filter by gorwth rate
-            ArrayList<Item> simpleItems = getSimpleItems(a, minSupp);
+            // Class '0' is considered as positive
+            ArrayList<Item> simpleItems = getSimpleItems(a, minSupp, 0);
             // sort items by growth rate 
             simpleItems.sort(null);
-            // gets all instances removing those instances
-            ArrayList<Pair<ArrayList<Item>, Integer>> instances = getInstances(a, simpleItems);
+            // gets all instances removing those itemset that not appear on simpleItems
+            ArrayList<Pair<ArrayList<Item>, Integer>> instances = getInstances(a, simpleItems, 0);
             for (int i = 0; i < instances.size(); i++) {
                 // sort each arraylist of items
                 instances.get(i).getKey().sort(null);
@@ -88,14 +89,14 @@ public class SJEP_Classifier {
                         pw.println(patterns.get(i).toString());
                     }
                     System.out.println("Testing patterns...");
-                // pattern TESTING here
+                    // pattern TESTING here
                     // First, reads the test set
                     InstanceSet test = new InstanceSet();
                     ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
 
                     test.readSet(args[1], false);
                     // Get the instances: It is not neccesary to sort that instances.
-                    testInstances = getInstances(test, simpleItems);
+                    testInstances = getInstances(test, simpleItems, 0);
                     // Writes the confusion matrix file in CSV format
                     pw = new PrintWriter(args[0] + "-CM.csv", "UTF-8");
                     pw.println("TP,FP,FN,TN"); // Prints the header
@@ -147,13 +148,71 @@ public class SJEP_Classifier {
             System.out.println("Execution time: " + (System.currentTimeMillis() - t_ini) / 1000 + " seconds");
 
         } else {
-            // For multi-class, mining using the OVA binarization technique.
+            // MULTICLASS EXECUTION
+            // For multi-class, mining using the OVA (One-vs-All) binarization technique.
+            long t_ini = System.currentTimeMillis();
+            // Here we store all patterns, each position of the ArrayList corresponds with patterns
+            // of the class at position 'i'.
+            ArrayList<ArrayList<Pattern>> allPatterns = new ArrayList<>();
+            // Execute the mining algorithm k times, with k the number of classes.
+            for (int i = 0; i < Attributes.getOutputAttribute(0).getNumNominalValues(); i++) {
+                // count the number of examples in the new binarized dataset
+                countD1 = countD2 = 0;
+                for (int j = 0; j < a.getNumInstances(); j++) {
+                    if (a.getInstance(i).getOutputNominalValuesInt(0) == i) {
+                        countD1++;
+                    } else {
+                        countD2++;
+                    }
+                }
 
+                System.out.println("Mining class: " + Attributes.getOutputAttribute(0).getNominalValue(i));
+                // Class 'i' is considered de positive class, the rest of classes correspond to the negative one.
+                // Get the simple items.
+                ArrayList<Item> simpleItems = getSimpleItems(a, minSupp, i);
+                // sort items by growth rate 
+                simpleItems.sort(null);
+                // gets all instances removing those itemset that not appear on simpleItems
+                ArrayList<Pair<ArrayList<Item>, Integer>> instances = getInstances(a, simpleItems, i);
+                for (int j = 0; j < instances.size(); j++) {
+                    // sort each arraylist of items
+                    instances.get(j).getKey().sort(null);
+                }
+
+                System.out.println("Loading the CP-Tree...");
+                // Create the CP-Tree
+                CPTree tree = new CPTree(countD1, countD2);
+                // Add the instances on the CP-Tree
+                for (Pair<ArrayList<Item>, Integer> inst : instances) {
+                    tree.insertTree(inst.getKey(), inst.getValue());
+                }
+
+                System.out.println("Mining SJEPs...");
+                // Perform mining
+                ArrayList<Pattern> patterns = tree.mineTree(minSupp);
+                System.out.println("Patterns obtained: " + patterns.size());
+                System.out.println("======================================");
+                System.out.println();
+            }
+
+            /* ========================
+             PATTERNS TEST
+             ========================
+             */
         }
 
     }
 
-    public static ArrayList<Item> getSimpleItems(InstanceSet a, double minSupp) {
+    /**
+     * Gets simple itemsets with a supper higher than a threshold
+     *
+     * @param a
+     * @param minSupp
+     * @param positiveClass - The class to consider as positive. For multiclass
+     * problems, the others classes are considered as negative.
+     * @return
+     */
+    public static ArrayList<Item> getSimpleItems(InstanceSet a, double minSupp, int positiveClass) {
         // Reads the KEEL instance set.
 
         int countD1 = 0;   // counts of examples belonging to class D1 and D2.
@@ -163,7 +222,7 @@ public class SJEP_Classifier {
         ArrayList<String> classes = new ArrayList<>(Attributes.getOutputAttribute(0).getNominalValuesList());
         // Gets the count of examples for each class to calculate the growth rate.
         for (int i = 0; i < a.getNumInstances(); i++) {
-            if (classes.indexOf(a.getInstance(i).getOutputNominalValues(0)) == 0) {
+            if (a.getInstance(i).getOutputNominalValuesInt(0) == positiveClass) {
                 countD1++;
             } else {
                 countD2++;
@@ -185,7 +244,7 @@ public class SJEP_Classifier {
                 for (int j = 0; j < a.getNumInstances(); j++) {
                     if (value.equals(a.getInputNominalValue(j, i))) {
                         // If are equals, check the class and increment counters
-                        if (classes.indexOf(a.getOutputNominalValue(j, 0)) == 0) {
+                        if (a.getInstance(j).getOutputNominalValuesInt(0) == positiveClass) {
                             countValueInD1++;
                         } else {
                             countValueInD2++;
@@ -215,7 +274,14 @@ public class SJEP_Classifier {
         return simpleItems;
     }
 
-    public static ArrayList<Pair<ArrayList<Item>, Integer>> getInstances(InstanceSet a, ArrayList<Item> simpleItems) {
+    /**
+     * Gets the instances of a dataset as set of Item class
+     *
+     * @param a
+     * @param simpleItems
+     * @return
+     */
+    public static ArrayList<Pair<ArrayList<Item>, Integer>> getInstances(InstanceSet a, ArrayList<Item> simpleItems, int positiveClass) {
         String[] att_names = new String[Attributes.getInputAttributes().length];
         ArrayList<Pair<ArrayList<Item>, Integer>> result = new ArrayList<>();
         ArrayList<String> classes = new ArrayList<>(Attributes.getOutputAttribute(0).getNominalValuesList());
@@ -235,7 +301,7 @@ public class SJEP_Classifier {
             }
             // Add into the set of instances, the second element is the class
             int clas = 0;
-            if (classes.indexOf(a.getOutputNominalValue(i, 0)) != 0) {
+            if (a.getInstance(i).getOutputNominalValuesInt(0) != positiveClass) {
                 clas = 1;
             }
             result.add(new Pair(list, clas));
