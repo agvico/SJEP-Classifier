@@ -5,8 +5,10 @@
  */
 package sjep_classifier;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +31,10 @@ import org.core.*;
  */
 public class SJEP_Classifier {
 
+    
+        public static String tra_file, tst_file, nombre_alg;
+        public static double minSupp;
+    
     /**
      * @param args the command line arguments
      */
@@ -37,11 +44,17 @@ public class SJEP_Classifier {
         InstanceSet a = new InstanceSet();
         int countD1 = 0;
         int countD2 = 0;
-        final double minSupp = 0.01;
-
+       
+        // Reads parameters
+        ReadParameters(args[0]);
+        
+        if(! nombre_alg.equalsIgnoreCase("sjep-c")){
+            System.out.println("Algorithm is not SJEP-C. Aborting...");
+            System.exit(-1);
+        }
         // Reads the original dataset
         try {
-            a.readSet(args[0], true);
+            a.readSet(tra_file, true);
             ArrayList<String> classes = new ArrayList<>(Attributes.getOutputAttribute(0).getNominalValuesList());
             // Gets the count of examples for each class to calculate the growth rate.
             for (int i = 0; i < a.getNumInstances(); i++) {
@@ -87,7 +100,7 @@ public class SJEP_Classifier {
                 System.out.println("NO SJEPs FOUND");
             } else {
                 try {
-                    PrintWriter pw = new PrintWriter(args[0] + "-Patterns.csv");
+                    PrintWriter pw = new PrintWriter(tra_file + "-Patterns.csv");
                     for (int i = 0; i < patterns.size(); i++) {
                         pw.println(patterns.get(i).toString());
                     }
@@ -97,11 +110,11 @@ public class SJEP_Classifier {
                     InstanceSet test = new InstanceSet();
                     ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
 
-                    test.readSet(args[1], false);
+                    test.readSet(tst_file, false);
                     // Get the instances: It is not neccesary to sort that instances.
                     testInstances = getInstances(test, simpleItems, 0);
                     // Writes the confusion matrix file in CSV format
-                    pw = new PrintWriter(args[0] + "-CM.csv", "UTF-8");
+                    pw = new PrintWriter(tra_file + "-CM.csv", "UTF-8");
                     pw.println("TP,FP,FN,TN"); // Prints the header
 
                     // Calculate the confusion matrix for each pattern to compute other quality measures
@@ -217,10 +230,10 @@ public class SJEP_Classifier {
             ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
 
             try {
-                PrintWriter pw = new PrintWriter(args[0] + "-Patterns.csv");
-                PrintWriter CMpw = new PrintWriter(args[0] + "-CM.csv", "UTF-8");
+                PrintWriter pw = new PrintWriter(tra_file + "-Patterns.csv");
+                PrintWriter CMpw = new PrintWriter(tra_file + "-CM.csv", "UTF-8");
                 CMpw.println("TP,FP,FN,TN"); // Prints the header
-                test.readSet(args[1], false);
+                test.readSet(tst_file, false);
                 // We have in 'allPatterns' an array with patterns of each class.
                 // Now, we determine the confusion matrix of each pattern.
                 for (int i = 0; i < allPatterns.size(); i++) {
@@ -493,4 +506,51 @@ public class SJEP_Classifier {
 
         calculateAccuracy(test, predictions);
     }
+    
+    
+    public void computeAccuracyMulticlass(ArrayList<Pair<ArrayList<Item>, Integer>> testInstances, ArrayList<Pattern> patterns, InstanceSet test){
+        
+    }
+    
+    
+    
+    
+    public static void ReadParameters(String nFile) {
+         try {
+            int nl;
+            String fichero, linea, tok;
+            StringTokenizer lineasFichero, tokens;
+            fichero = File.readFile(nFile);
+            //fichero = fichero.toLowerCase() + "\n ";
+            lineasFichero = new StringTokenizer(fichero, "\n\r");
+
+            for (nl = 0, linea = lineasFichero.nextToken(); lineasFichero.hasMoreTokens(); linea = lineasFichero.nextToken()) {
+                nl++;
+                tokens = new StringTokenizer(linea, " ,\t");
+                if (tokens.hasMoreTokens()) {
+                    tok = tokens.nextToken();
+                    if (tok.equalsIgnoreCase("algorithm")) {
+                        nombre_alg = Utils.getParamString(tokens);
+                    } else if (tok.equalsIgnoreCase("minsupp")){
+                        minSupp = Double.parseDouble(Utils.getParamString(tokens));
+                    } else if (tok.equalsIgnoreCase("training")){
+                        tra_file = Utils.getParamString(tokens);
+                    } else if (tok.equalsIgnoreCase("test")){
+                        tst_file = Utils.getParamString(tokens);
+                    } else {
+                        throw new IOException("Syntax error on line " + nl + ": [" + tok + "]\n");
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println(e + " Parameter file");
+        } catch (IOException e) {
+            System.err.println(e + "Aborting program");
+            System.exit(-1);
+        }
+    }
+
 }
+
+
+
