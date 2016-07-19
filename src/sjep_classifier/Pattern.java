@@ -79,4 +79,11 @@ public class Pattern {
         result += items.get(items.size()-1).toString();
         return result + " THEN " + Attributes.getOutputAttribute(0).getNominalValue(clase);
     }
+
+    /**
+     * @param clase the clase to set
+     */
+    public void setClase(int clase) {
+        this.clase = clase;
+    }
 }

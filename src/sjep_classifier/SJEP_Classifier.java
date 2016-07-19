@@ -6,12 +6,15 @@
 package sjep_classifier;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -145,7 +148,7 @@ public class SJEP_Classifier {
                 }
 
             }
-            System.out.println("Execution time: " + (System.currentTimeMillis() - t_ini) / 1000 + " seconds");
+            System.out.println("Execution time: " + (double) (System.currentTimeMillis() - t_ini) / 1000.0 + " seconds");
 
         } else {
             // MULTICLASS EXECUTION
@@ -190,21 +193,100 @@ public class SJEP_Classifier {
                 System.out.println("Mining SJEPs...");
                 // Perform mining
                 ArrayList<Pattern> patterns = tree.mineTree(minSupp);
-                System.out.println("Patterns obtained: " + patterns.size());
-                System.out.println("======================================");
-                System.out.println();
+                // remove those patterns with class != 0 and change the value of the class
+                Iterator it = patterns.iterator();
+                while (it.hasNext()) {
+                    Pattern next = (Pattern) it.next();
+                    if (next.getClase() != 0) {
+                        it.remove();
+                    } else {
+                        next.setClase(i);
+                    }
+                }
+                allPatterns.add(patterns);
             }
 
             /* ========================
              PATTERNS TEST
              ========================
              */
+            System.out.println("Testing patterns...");
+            // pattern TESTING here
+            // First, reads the test set
+            InstanceSet test = new InstanceSet();
+            ArrayList<Pair<ArrayList<Item>, Integer>> testInstances;
+
+            try {
+                PrintWriter pw = new PrintWriter(args[0] + "-Patterns.csv");
+                PrintWriter CMpw = new PrintWriter(args[0] + "-CM.csv", "UTF-8");
+                CMpw.println("TP,FP,FN,TN"); // Prints the header
+                test.readSet(args[1], false);
+                // We have in 'allPatterns' an array with patterns of each class.
+                // Now, we determine the confusion matrix of each pattern.
+                for (int i = 0; i < allPatterns.size(); i++) {
+                    ArrayList<Pattern> patterns = allPatterns.get(i);
+
+                    for (int j = 0; j < patterns.size(); j++) {
+                        pw.println(patterns.get(j).toString());
+                    }
+
+                    // Get the instances: It is not neccesary to sort that instances.
+                    ArrayList<Item> simpleItems = getSimpleItems(test, minSupp, i);
+                    testInstances = getInstances(test, simpleItems, i);
+
+                    // Calculate the confusion matrix for each pattern to compute other quality measures
+                    for (int j = 0; j < patterns.size(); j++) {
+                        int tp = 0;
+                        int tn = 0;
+                        int fp = 0;
+                        int fn = 0;
+                        // for each instance
+                        for (int k = 0; k < testInstances.size(); k++) {
+                            // class '0' is considered the positive class (which is marked as the 'i' index
+                            // If the pattern covers the example
+                            if (patterns.get(j).covers(testInstances.get(k).getKey())) {
+                                if (test.getOutputNumericValue(k, 0) == i) {
+                                    if (patterns.get(j).getClase() == i) {
+                                        tp++;
+                                    } else {
+                                        fn++;
+                                    }
+                                } else {
+                                    if (patterns.get(j).getClase() != i) {
+                                        tn++;
+                                    } else {
+                                        fp++;
+                                    }
+                                }
+                            }
+                        }
+                        // Saves on the file
+                        CMpw.println(tp + "," + fp + "," + fn + "," + tn);
+                    }
+
+                }
+
+                // close the writer
+                pw.close();
+                CMpw.close();
+                // Show statistics
+                System.out.println("================ STATISTICS =====================");
+                int sum = 0;
+                for (ArrayList<Pattern> patterns : allPatterns) {
+                    sum += patterns.size();
+                }
+                System.out.println("SJEPs found: " + sum);
+            } catch (FileNotFoundException | DatasetException | HeaderFormatException | UnsupportedEncodingException ex) {
+                Logger.getLogger(SJEP_Classifier.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.out.println("Execution time: " + (double) (System.currentTimeMillis() - t_ini) / 1000.0 + " seconds");
+
         }
 
     }
 
     /**
-     * Gets simple itemsets with a supper higher than a threshold
+     * Gets simple itemsets with a support higher than a threshold
      *
      * @param a
      * @param minSupp
