@@ -1,0 +1,5 @@
+algorithm = SJEP-C
+training = car-5-1tra.dat
+test = car-5-1tra.dat
+minSupp = 0.2
+no

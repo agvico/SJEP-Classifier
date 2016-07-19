@@ -1,0 +1,703 @@
+IF Persons = 2 THEN unacc
+IF Safety = low THEN unacc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 2 AND Maint = med AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 2 AND Maint = low AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 3 AND Maint = med AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 3 AND Maint = low AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = med AND Doors = 5more THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Lug_boot = med AND Doors = 4 AND Maint = low THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = low AND Doors = 5more THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Maint = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Maint = med AND Doors = 5more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Maint = med AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 4 AND Maint = low AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Maint = low AND Doors = 5more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Maint = low AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Persons = 4 AND Doors = 5more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Doors = 2 AND Maint = med AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Doors = 2 AND Maint = med AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Doors = 3 AND Lug_boot = med AND Maint = med AND Persons = more THEN acc
+IF Buying = vhigh AND Safety = med AND Doors = 3 AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Buying = vhigh AND Safety = med AND Lug_boot = med AND Maint = med AND Doors = 4 THEN acc
+IF Buying = vhigh AND Safety = med AND Lug_boot = med AND Maint = med AND Doors = 5more THEN acc
+IF Buying = vhigh AND Safety = med AND Lug_boot = med AND Doors = 4 AND Maint = low AND Persons = more THEN acc
+IF Buying = vhigh AND Safety = med AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Buying = vhigh AND Safety = med AND Lug_boot = med AND Doors = 5more AND Persons = more THEN acc
+IF Buying = vhigh AND Safety = med AND Maint = med AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Maint = med AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Maint = med AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Safety = med AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Maint = med AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = small AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 2 AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 2 AND Lug_boot = med AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 2 AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 2 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 2 AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 3 AND Maint = med AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 3 AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 3 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 3 AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = med AND Maint = med AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = med AND Maint = low AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Lug_boot = med AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Doors = 4 AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = med AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 4 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 4 AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = low AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Maint = low AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = 4 AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Doors = 3 AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = low AND Doors = 5more AND Persons = more THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = low AND Doors = 5more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = small AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 2 AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 2 AND Maint = med AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Doors = 2 AND Maint = low AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Doors = 2 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 2 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Lug_boot = med AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Maint = low AND Persons = more AND Lug_boot = big THEN acc
+IF Buying = vhigh AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 3 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = med AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = med AND Doors = 4 AND Maint = low AND Persons = more THEN acc
+IF Buying = vhigh AND Lug_boot = med AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Lug_boot = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 4 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = vhigh AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = vhigh AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Doors = 3 AND Buying = med AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = med AND Doors = 4 THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Doors = 4 AND Buying = low THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = low AND Doors = 5more THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Buying = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Buying = med AND Doors = 5more THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Buying = med AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Doors = 4 AND Buying = low AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Buying = low AND Doors = 5more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Buying = low AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Persons = 4 AND Doors = 5more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 2 AND Buying = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 2 AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 3 AND Lug_boot = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 3 AND Lug_boot = med AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 3 AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 3 AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Lug_boot = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Lug_boot = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Lug_boot = med AND Doors = 4 AND Buying = low THEN acc
+IF Safety = med AND Maint = vhigh AND Buying = med AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Buying = med AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Buying = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 4 AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Buying = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = vhigh AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = vhigh AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = med AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Maint = high AND Doors = 4 AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Maint = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Buying = med AND Doors = 4 AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Buying = med AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Buying = med AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Doors = 4 AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = small AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Buying = high AND Maint = high AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Buying = high AND Maint = med AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Buying = high AND Maint = low AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Maint = high AND Buying = med AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Lug_boot = med AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Lug_boot = med AND Buying = med AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Lug_boot = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 2 AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Doors = 3 AND Maint = med AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Doors = 3 AND Maint = low AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Doors = 3 AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = high AND Lug_boot = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = high AND Doors = 4 AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = high AND Doors = 5more AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = high AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Lug_boot = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = low AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = med AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Doors = 4 AND Maint = low AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Buying = high AND Maint = low AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Maint = high AND Lug_boot = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Maint = high AND Buying = med AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Maint = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Doors = 3 AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Lug_boot = med AND Buying = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Lug_boot = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Buying = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Buying = med AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Doors = 4 AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Maint = high AND Doors = 5more AND Lug_boot = big THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = med AND Doors = 5more THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = med AND Maint = med AND Buying = low THEN acc
+IF Safety = med AND Persons = 4 AND Lug_boot = med AND Buying = med AND Doors = 4 THEN acc
+IF Safety = med AND Persons = 4 AND Maint = med AND Buying = med THEN acc
+IF Safety = med AND Persons = 4 AND Buying = med AND Doors = 4 AND Maint = low THEN acc
+IF Safety = med AND Persons = 4 AND Buying = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 2 AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Maint = high AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Maint = med AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Buying = med AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Buying = low AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 3 AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = high AND Doors = 4 AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = high AND Buying = low AND Doors = 5more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = med AND Doors = 4 AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = med AND Buying = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Buying = med AND Doors = 4 AND Maint = low THEN acc
+IF Safety = med AND Lug_boot = small AND Buying = med AND Maint = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Doors = 4 AND Buying = low AND Maint = low THEN acc
+IF Safety = med AND Lug_boot = small AND Buying = low AND Maint = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Buying = low AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Buying = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = small AND Maint = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Buying = high AND Maint = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Buying = high AND Maint = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Buying = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Maint = high AND Buying = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Maint = high AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Maint = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 2 AND Lug_boot = med AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Lug_boot = med AND Maint = med AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Lug_boot = med AND Buying = med AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Lug_boot = med AND Buying = low AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 2 AND Maint = med AND Buying = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = med AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = med AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Doors = 3 AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Doors = 3 AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Maint = high AND Lug_boot = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Maint = high AND Lug_boot = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Maint = high AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Maint = high AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Maint = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Lug_boot = med AND Doors = 4 AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Lug_boot = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Maint = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Buying = high AND Maint = med AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Maint = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Doors = 4 AND Maint = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Maint = low AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Buying = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 3 AND Maint = high AND Lug_boot = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Doors = 3 AND Maint = high AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Doors = 3 AND Maint = high AND Buying = med AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 3 AND Maint = high AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Doors = 3 AND Maint = high AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Doors = 3 AND Lug_boot = med AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Doors = 3 AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Doors = 3 AND Buying = low AND Maint = low AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Doors = 4 AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Buying = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Lug_boot = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Buying = med AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = high AND Buying = med AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = high AND Doors = 4 AND Buying = low AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Maint = high AND Buying = low AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = high AND Doors = 5more AND Persons = more AND Lug_boot = big THEN acc
+IF Safety = med AND Lug_boot = med AND Maint = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = med AND Maint = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Lug_boot = med AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Safety = med AND Maint = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Safety = med AND Maint = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Safety = med AND Maint = med AND Doors = 4 AND Persons = more AND Lug_boot = big THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = med THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Doors = 4 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Buying = low AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = small AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 2 AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 2 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Buying = med AND Lug_boot = big THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Buying = low AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 3 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = med AND Doors = 4 AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = med AND Doors = 5more THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Doors = 4 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = low AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Lug_boot = med AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = med AND Doors = 4 AND Lug_boot = big THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = med AND Doors = 4 AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = med AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 4 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = low AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Buying = low AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = 4 AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Doors = 3 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Buying = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Buying = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = small AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 2 AND Lug_boot = med AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 2 AND Lug_boot = med AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 2 AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 2 AND Buying = low AND Persons = more AND Lug_boot = big THEN acc
+IF Maint = vhigh AND Doors = 2 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 2 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Lug_boot = med AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 3 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Lug_boot = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = med AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = med AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 4 AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = low AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = vhigh AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = vhigh AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = high AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = high AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = high AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = high AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = high AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Maint = high AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Maint = high AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Doors = 4 AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = high AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = high AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = high AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Buying = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Doors = 4 AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = high AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = med AND Buying = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = med AND Buying = med AND Doors = 5more THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Maint = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Lug_boot = small AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Maint = high AND Lug_boot = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Maint = high AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Maint = high AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Lug_boot = med AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Buying = high AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Maint = high AND Lug_boot = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Maint = high AND Buying = med AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 2 AND Maint = high AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = big THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = high AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Lug_boot = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = med AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 3 AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = high AND Lug_boot = med AND Doors = 4 THEN acc
+IF Persons = 4 AND Buying = high AND Maint = high AND Lug_boot = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = high AND Doors = 4 AND Lug_boot = big THEN acc
+IF Persons = 4 AND Buying = high AND Maint = high AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = high AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = med AND Doors = 5more THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Doors = 4 AND Maint = low AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Maint = low AND Doors = 5more THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Doors = 4 AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = med AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 4 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 4 AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = low AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Buying = high AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Lug_boot = med AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Buying = med AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Maint = high AND Buying = low AND Safety = high THEN acc
+IF Persons = 4 AND Doors = 3 AND Lug_boot = med AND Maint = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Lug_boot = med AND Buying = med AND Doors = 4 AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Lug_boot = med AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Buying = med AND Doors = 4 AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Buying = med AND Doors = 5more AND Lug_boot = big AND Safety = high THEN acc
+IF Persons = 4 AND Maint = high AND Buying = med AND Doors = 5more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = high AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 3 AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = high AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = high AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = high AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = med AND Doors = 4 AND Persons = more THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = med AND Doors = 4 AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = high AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Doors = 3 AND Maint = high AND Buying = low AND Persons = more THEN acc
+IF Lug_boot = small AND Doors = 3 AND Maint = high AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = high AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Lug_boot = small AND Maint = high AND Buying = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = high AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = high AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = high AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = high AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Maint = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Lug_boot = small AND Maint = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Lug_boot = small AND Buying = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Maint = high AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Maint = high AND Persons = more AND Lug_boot = big THEN acc
+IF Doors = 2 AND Buying = high AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Lug_boot = med AND Maint = med AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Lug_boot = med AND Maint = low AND Persons = more THEN acc
+IF Doors = 2 AND Buying = high AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 2 AND Buying = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = med AND Safety = high THEN acc
+IF Doors = 2 AND Maint = high AND Lug_boot = med AND Buying = low AND Persons = more THEN acc
+IF Doors = 2 AND Maint = high AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 2 AND Maint = high AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 2 AND Maint = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 2 AND Lug_boot = med AND Maint = med AND Buying = med AND Persons = more THEN acc
+IF Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = med AND Persons = more THEN acc
+IF Buying = high AND Doors = 3 AND Maint = high AND Lug_boot = med AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Maint = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = med AND Persons = more THEN acc
+IF Buying = high AND Doors = 3 AND Lug_boot = med AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Doors = 3 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Lug_boot = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Lug_boot = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Lug_boot = med AND Doors = 5more AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Maint = med AND Doors = 4 AND Persons = more THEN acc
+IF Buying = high AND Lug_boot = med AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Lug_boot = med AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = med AND Doors = 4 AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = med AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 4 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Doors = 4 AND Maint = low AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 4 AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = low AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Maint = low AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Buying = high AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Buying = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 3 AND Maint = high AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Doors = 3 AND Maint = high AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Doors = 3 AND Maint = high AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = high AND Lug_boot = med AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Maint = high AND Lug_boot = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Maint = high AND Lug_boot = med AND Buying = med AND Persons = more AND Safety = high THEN acc
+IF Maint = high AND Buying = med AND Doors = 4 AND Persons = more THEN acc
+IF Maint = high AND Buying = med AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Maint = high AND Buying = med AND Doors = 5more AND Persons = more AND Safety = high THEN acc
+IF Maint = high AND Buying = med AND Persons = more AND Lug_boot = big AND Safety = high THEN acc
+IF Lug_boot = med AND Maint = med AND Buying = med AND Doors = 5more AND Persons = more THEN acc
+IF Maint = high AND Lug_boot = med AND Persons = 4 AND Doors = 4 AND Buying = low AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Persons = 4 AND Buying = low AND Doors = 5more AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Doors = 3 AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Doors = 4 AND Buying = low AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN vgood
+IF Maint = high AND Lug_boot = med AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Maint = high AND Doors = 2 AND Persons = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Persons = 4 AND Doors = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Persons = 4 AND Buying = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Persons = 4 AND Buying = low AND Doors = 5more AND Safety = high THEN vgood
+IF Maint = high AND Persons = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Doors = 4 AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Buying = low AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN vgood
+IF Maint = high AND Buying = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = high AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Persons = 4 AND Maint = med AND Doors = 4 THEN vgood
+IF Buying = med AND Lug_boot = med AND Persons = 4 AND Maint = low AND Doors = 5more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Doors = 3 AND Maint = med AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Maint = med AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Lug_boot = med AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Doors = 2 AND Persons = 4 AND Maint = med AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 2 AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 2 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Doors = 3 AND Maint = med AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Doors = 3 AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = med AND Doors = 4 AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = med AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = med AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Doors = 4 AND Maint = low AND Lug_boot = big THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = low AND Doors = 5more AND Safety = high THEN vgood
+IF Buying = med AND Persons = 4 AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 3 AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 3 AND Maint = med AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Doors = 3 AND Maint = med AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 3 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Maint = med AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Maint = med AND Doors = 5more AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Maint = med AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Maint = med AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Doors = 4 AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = med AND Doors = 4 AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Buying = med AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Lug_boot = med AND Persons = 4 AND Maint = med AND Doors = 4 AND Buying = low AND Safety = high THEN vgood
+IF Lug_boot = med AND Persons = 4 AND Maint = med AND Buying = low AND Doors = 5more AND Safety = high THEN vgood
+IF Lug_boot = med AND Persons = 4 AND Doors = 4 AND Buying = low AND Maint = low AND Safety = high THEN vgood
+IF Lug_boot = med AND Persons = 4 AND Buying = low AND Maint = low AND Doors = 5more AND Safety = high THEN vgood
+IF Lug_boot = med AND Doors = 3 AND Maint = med AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Doors = 3 AND Buying = low AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Doors = 3 AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Maint = med AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Maint = med AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Maint = med AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Doors = 4 AND Buying = low AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Lug_boot = med AND Buying = low AND Maint = low AND Persons = more AND Safety = high THEN vgood
+IF Doors = 2 AND Persons = 4 AND Maint = med AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 2 AND Persons = 4 AND Maint = med AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 2 AND Persons = 4 AND Buying = low AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 2 AND Persons = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 2 AND Maint = med AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 2 AND Buying = low AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Doors = 3 AND Maint = med AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Doors = 3 AND Buying = low AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Maint = med AND Doors = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Maint = med AND Buying = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Maint = med AND Buying = low AND Doors = 5more AND Safety = high THEN vgood
+IF Persons = 4 AND Maint = med AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Buying = low AND Maint = low AND Doors = 5more AND Lug_boot = big AND Safety = high THEN vgood
+IF Persons = 4 AND Buying = low AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 3 AND Maint = med AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 3 AND Buying = low AND Maint = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = med AND Doors = 4 AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = med AND Doors = 4 AND Buying = low AND Persons = more AND Safety = high THEN vgood
+IF Maint = med AND Doors = 4 AND Buying = low AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = med AND Buying = low AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = med AND Buying = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Doors = 4 AND Buying = low AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = low AND Maint = low AND Doors = 5more AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Buying = low AND Maint = low AND Persons = more AND Lug_boot = big AND Safety = high THEN vgood
+IF Maint = med AND Persons = 4 AND Safety = med AND Doors = 3 AND Buying = low AND Lug_boot = big THEN good
+IF Maint = med AND Persons = 4 AND Safety = med AND Doors = 4 AND Buying = low THEN good
+IF Maint = med AND Persons = 4 AND Safety = med AND Doors = 2 AND Buying = low THEN good
+IF Maint = med AND Persons = 4 AND Safety = med AND Buying = low AND Doors = 5more THEN good
+IF Maint = med AND Persons = 4 AND Safety = med AND Buying = low AND Lug_boot = big THEN good
+IF Maint = med AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Buying = low AND Safety = high THEN good
+IF Maint = med AND Persons = 4 AND Lug_boot = small AND Doors = 4 AND Buying = low AND Safety = high THEN good
+IF Maint = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = low THEN good
+IF Maint = med AND Persons = 4 AND Lug_boot = small AND Buying = low AND Safety = high THEN good
+IF Maint = med AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Buying = low AND Safety = high THEN good
+IF Maint = med AND Persons = 4 AND Lug_boot = med AND Doors = 2 AND Buying = low AND Safety = high THEN good
+IF Maint = med AND Safety = med AND Doors = 3 AND Lug_boot = med AND Buying = low AND Persons = more THEN good
+IF Maint = med AND Safety = med AND Doors = 3 AND Buying = low AND Persons = more AND Lug_boot = big THEN good
+IF Maint = med AND Safety = med AND Doors = 3 AND Persons = more AND Lug_boot = big THEN good
+IF Maint = med AND Safety = med AND Lug_boot = med AND Doors = 4 AND Buying = low THEN good
+IF Maint = med AND Safety = med AND Lug_boot = med AND Buying = low AND Doors = 5more THEN good
+IF Maint = med AND Safety = med AND Doors = 2 AND Buying = low AND Persons = more AND Lug_boot = big THEN good
+IF Maint = med AND Safety = med AND Buying = low AND Doors = 5more AND Persons = more AND Lug_boot = big THEN good
+IF Maint = med AND Safety = med AND Buying = low AND Persons = more AND Lug_boot = big THEN good
+IF Maint = med AND Lug_boot = small AND Doors = 3 AND Buying = low AND Persons = more AND Safety = high THEN good
+IF Maint = med AND Lug_boot = small AND Buying = low AND Doors = 5more AND Persons = more AND Safety = high THEN good
+IF Maint = med AND Lug_boot = med AND Doors = 2 AND Buying = low AND Persons = more AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Doors = 3 AND Maint = low THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Lug_boot = med AND Maint = low AND Doors = 5more THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Lug_boot = med AND Doors = 5more THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Doors = 2 AND Maint = low AND Lug_boot = big THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Maint = low AND Doors = 5more AND Lug_boot = big THEN good
+IF Buying = med AND Persons = 4 AND Safety = med AND Maint = low AND Lug_boot = big THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = small AND Doors = 3 AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = small AND Doors = 4 AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = small AND Doors = 2 AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = small AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Doors = 3 AND Lug_boot = med AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = med AND Doors = 2 AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Lug_boot = med AND Doors = 2 AND Safety = high THEN good
+IF Buying = med AND Persons = 4 AND Doors = 2 AND Maint = low AND Safety = high THEN good
+IF Buying = med AND Safety = med AND Doors = 3 AND Lug_boot = med AND Maint = low THEN good
+IF Buying = med AND Safety = med AND Doors = 3 AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Buying = med AND Safety = med AND Lug_boot = med AND Doors = 4 AND Maint = low THEN good
+IF Buying = med AND Safety = med AND Lug_boot = med AND Maint = low AND Doors = 5more AND Persons = more THEN good
+IF Buying = med AND Safety = med AND Doors = 4 AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Buying = med AND Safety = med AND Doors = 2 AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Buying = med AND Safety = med AND Doors = 2 AND Maint = low AND Lug_boot = big THEN good
+IF Buying = med AND Safety = med AND Maint = low AND Doors = 5more AND Persons = more AND Lug_boot = big THEN good
+IF Buying = med AND Safety = med AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Buying = med AND Lug_boot = small AND Doors = 3 AND Maint = low AND Persons = more AND Safety = high THEN good
+IF Buying = med AND Lug_boot = small AND Doors = 3 AND Persons = more AND Safety = high THEN good
+IF Buying = med AND Lug_boot = small AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN good
+IF Buying = med AND Lug_boot = small AND Maint = low AND Doors = 5more AND Safety = high THEN good
+IF Buying = med AND Lug_boot = med AND Doors = 2 AND Maint = low AND Persons = more AND Safety = high THEN good
+IF Buying = med AND Lug_boot = med AND Doors = 2 AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Safety = med AND Lug_boot = med AND Doors = 4 AND Buying = low AND Maint = low THEN good
+IF Persons = 4 AND Safety = med AND Lug_boot = med AND Buying = low AND Maint = low AND Doors = 5more THEN good
+IF Persons = 4 AND Safety = med AND Doors = 4 AND Buying = low AND Maint = low AND Lug_boot = big THEN good
+IF Persons = 4 AND Safety = med AND Doors = 2 AND Buying = low AND Maint = low AND Lug_boot = big THEN good
+IF Persons = 4 AND Safety = med AND Buying = low AND Maint = low AND Doors = 5more AND Lug_boot = big THEN good
+IF Persons = 4 AND Safety = med AND Buying = low AND Maint = low AND Lug_boot = big THEN good
+IF Persons = 4 AND Lug_boot = small AND Doors = 3 AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = small AND Doors = 4 AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = small AND Doors = 2 AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = small AND Buying = low AND Maint = low AND Doors = 5more AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = small AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = small AND Maint = low AND Doors = 5more AND Safety = high THEN good
+IF Persons = 4 AND Doors = 3 AND Lug_boot = med AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Persons = 4 AND Lug_boot = med AND Doors = 2 AND Buying = low AND Maint = low AND Safety = high THEN good
+IF Safety = med AND Lug_boot = med AND Doors = 4 AND Buying = low AND Maint = low AND Persons = more THEN good
+IF Safety = med AND Lug_boot = med AND Maint = low AND Doors = 5more AND Persons = more THEN good
+IF Safety = med AND Doors = 4 AND Buying = low AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Safety = med AND Doors = 2 AND Buying = low AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Safety = med AND Doors = 2 AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Safety = med AND Buying = low AND Maint = low AND Doors = 5more AND Persons = more AND Lug_boot = big THEN good
+IF Safety = med AND Buying = low AND Maint = low AND Doors = 5more AND Lug_boot = big THEN good
+IF Safety = med AND Buying = low AND Maint = low AND Persons = more AND Lug_boot = big THEN good
+IF Safety = med AND Maint = low AND Doors = 5more AND Persons = more AND Lug_boot = big THEN good
+IF Lug_boot = small AND Doors = 3 AND Buying = low AND Maint = low AND Persons = more AND Safety = high THEN good
+IF Lug_boot = small AND Doors = 4 AND Buying = low AND Maint = low AND Persons = more AND Safety = high THEN good
+IF Lug_boot = small AND Buying = low AND Maint = low AND Doors = 5more AND Persons = more AND Safety = high THEN good
