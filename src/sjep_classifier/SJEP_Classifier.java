@@ -31,10 +31,9 @@ import org.core.*;
  */
 public class SJEP_Classifier {
 
-    
-        public static String tra_file, tst_file, nombre_alg;
-        public static double minSupp;
-    
+    public static String tra_file, tst_file, nombre_alg;
+    public static double minSupp;
+
     /**
      * @param args the command line arguments
      */
@@ -44,11 +43,11 @@ public class SJEP_Classifier {
         InstanceSet a = new InstanceSet();
         int countD1 = 0;
         int countD2 = 0;
-       
+
         // Reads parameters
         ReadParameters(args[0]);
-        
-        if(! nombre_alg.equalsIgnoreCase("sjep-c")){
+
+        if (!nombre_alg.equalsIgnoreCase("sjep-c")) {
             System.out.println("Algorithm is not SJEP-C. Aborting...");
             System.exit(-1);
         }
@@ -125,23 +124,22 @@ public class SJEP_Classifier {
                         int fn = 0;
                         // for each instance
                         for (int j = 0; j < testInstances.size(); j++) {
-                            // class '0' is considered the positive class
                             // If the pattern covers the example
                             if (patterns.get(i).covers(testInstances.get(j).getKey())) {
-                                if (test.getOutputNumericValue(j, 0) == 0) {
-                                    if (patterns.get(i).getClase() == 0) {
-                                        tp++;
-                                    } else {
-                                        fn++;
-                                    }
+
+                                if (patterns.get(i).getClase() == testInstances.get(j).getValue()) {
+                                    tp++;
                                 } else {
-                                    if (patterns.get(i).getClase() == 1) {
-                                        tn++;
-                                    } else {
-                                        fp++;
-                                    }
+                                    fp++;
+                                }
+                            } else {
+                                if (patterns.get(i).getClase() != testInstances.get(j).getValue()) {
+                                    tn++;
+                                } else {
+                                    fn++;
                                 }
                             }
+
                         }
                         // Saves on the file
                         pw.println(tp + "," + fp + "," + fn + "," + tn);
@@ -258,19 +256,19 @@ public class SJEP_Classifier {
                             // class '0' is considered the positive class (which is marked as the 'i' index
                             // If the pattern covers the example
                             if (patterns.get(j).covers(testInstances.get(k).getKey())) {
-                                if (test.getOutputNumericValue(k, 0) == i) {
-                                    if (patterns.get(j).getClase() == i) {
-                                        tp++;
-                                    } else {
-                                        fn++;
-                                    }
+
+                                if (patterns.get(j).getClase() == testInstances.get(k).getValue()) {
+                                    tp++;
                                 } else {
-                                    if (patterns.get(j).getClase() != i) {
-                                        tn++;
-                                    } else {
-                                        fp++;
-                                    }
+                                    fp++;
                                 }
+                            } else {
+                                if (patterns.get(j).getClase() != testInstances.get(k).getValue()) {
+                                    tn++;
+                                } else {
+                                    fn++;
+                                }
+
                             }
                         }
                         // Saves on the file
@@ -506,17 +504,13 @@ public class SJEP_Classifier {
 
         calculateAccuracy(test, predictions);
     }
-    
-    
-    public void computeAccuracyMulticlass(ArrayList<Pair<ArrayList<Item>, Integer>> testInstances, ArrayList<Pattern> patterns, InstanceSet test){
-        
+
+    public void computeAccuracyMulticlass(ArrayList<Pair<ArrayList<Item>, Integer>> testInstances, ArrayList<Pattern> patterns, InstanceSet test) {
+
     }
-    
-    
-    
-    
+
     public static void ReadParameters(String nFile) {
-         try {
+        try {
             int nl;
             String fichero, linea, tok;
             StringTokenizer lineasFichero, tokens;
@@ -531,11 +525,11 @@ public class SJEP_Classifier {
                     tok = tokens.nextToken();
                     if (tok.equalsIgnoreCase("algorithm")) {
                         nombre_alg = Utils.getParamString(tokens);
-                    } else if (tok.equalsIgnoreCase("minsupp")){
+                    } else if (tok.equalsIgnoreCase("minsupp")) {
                         minSupp = Double.parseDouble(Utils.getParamString(tokens));
-                    } else if (tok.equalsIgnoreCase("training")){
+                    } else if (tok.equalsIgnoreCase("training")) {
                         tra_file = Utils.getParamString(tokens);
-                    } else if (tok.equalsIgnoreCase("test")){
+                    } else if (tok.equalsIgnoreCase("test")) {
                         tst_file = Utils.getParamString(tokens);
                     } else {
                         throw new IOException("Syntax error on line " + nl + ": [" + tok + "]\n");
@@ -551,6 +545,3 @@ public class SJEP_Classifier {
     }
 
 }
-
-
-
